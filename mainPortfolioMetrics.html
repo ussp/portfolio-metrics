@@ -2,6 +2,42 @@
 <html>
 <head>
     <title>Portfolio Metrics Calculation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        p, pre, code {
+            color: #555;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ddd;
+            overflow-x: auto;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+        ul {
+            list-style: disc inside;
+        }
+        ol {
+            list-style: decimal inside;
+        }
+        .example {
+            background: #e7f3fe;
+            border-left: 4px solid #2196F3;
+            padding: 10px 20px;
+            margin: 20px 0;
+        }
+    </style>
 </head>
 <body>
     <h1>Portfolio Metrics Calculation</h1>
@@ -11,69 +47,67 @@
     
     <h2>PnL Calculation</h2>
     <p>To calculate the Profit and Loss (PnL) for each asset:</p>
-    <pre><code>
-PnL = (Ending Price - Starting Price) × Number of Shares
-    </code></pre>
-    <p><strong>Example:</strong></p>
-    <p>Starting Price = 100<br>
-       Ending Price = 120<br>
-       Number of Shares = 10<br>
-       <strong>Calculation:</strong><br>
-       PnL = (120 - 100) × 10 = 200</p>
+    <pre><code>PnL = (Ending Price - Starting Price) × Number of Shares</code></pre>
+    <div class="example">
+        <strong>Example:</strong>
+        <p>Starting Price = 100<br>
+           Ending Price = 120<br>
+           Number of Shares = 10<br>
+           <strong>Calculation:</strong><br>
+           PnL = (120 - 100) × 10 = 200</p>
+    </div>
 
     <h2>Total PnL Calculation</h2>
     <p>To calculate the Total PnL for the portfolio:</p>
-    <pre><code>
-Total PnL = Σ (PnL for each asset)
-    </code></pre>
-    <p><strong>Example:</strong></p>
-    <p>PnL for Asset 1 = 200<br>
-       PnL for Asset 2 = 100<br>
-       <strong>Calculation:</strong><br>
-       Total PnL = 200 + 100 = 300</p>
+    <pre><code>Total PnL = Σ (PnL for each asset)</code></pre>
+    <div class="example">
+        <strong>Example:</strong>
+        <p>PnL for Asset 1 = 200<br>
+           PnL for Asset 2 = 100<br>
+           <strong>Calculation:</strong><br>
+           Total PnL = 200 + 100 = 300</p>
+    </div>
 
     <h2>CAGR Calculation</h2>
     <p>To calculate the Compound Annual Growth Rate (CAGR):</p>
-    <pre><code>
-CAGR = ((Ending Value / Starting Value) ^ (1 / Number of Years)) - 1
-    </code></pre>
-    <p><strong>Example:</strong></p>
-    <p>Starting Value = 1000<br>
-       Ending Value = 2000<br>
-       Number of Years = 5<br>
-       <strong>Calculation:</strong><br>
-       CAGR = ((2000 / 1000) ^ (1 / 5)) - 1 ≈ 0.1487 or 14.87%</p>
+    <pre><code>CAGR = ((Ending Value / Starting Value) ^ (1 / Number of Years)) - 1</code></pre>
+    <div class="example">
+        <strong>Example:</strong>
+        <p>Starting Value = 1000<br>
+           Ending Value = 2000<br>
+           Number of Years = 5<br>
+           <strong>Calculation:</strong><br>
+           CAGR = ((2000 / 1000) ^ (1 / 5)) - 1 ≈ 0.1487 or 14.87%</p>
+    </div>
 
     <h2>Standard Deviation (Risk) Calculation</h2>
     <p>To calculate the Standard Deviation (Risk) for the portfolio:</p>
-    <pre><code>
-σ = sqrt((1 / N) Σ (x_i - μ)²)
-    </code></pre>
+    <pre><code>σ = sqrt((1 / N) Σ (x_i - μ)²)</code></pre>
     <p>Where:</p>
     <ul>
         <li>N is the number of observations</li>
         <li>x_i is each individual PnL value</li>
         <li>μ is the mean of the PnL values</li>
     </ul>
-    <p><strong>Steps:</strong></p>
     <ol>
         <li>Calculate the mean (μ) of the PnL values:<br>
-            μ = (Σ x_i) / N</li>
+            <code>μ = (Σ x_i) / N</code></li>
         <li>Calculate each squared deviation from the mean and then the variance:<br>
-            Variance = (1 / N) Σ (x_i - μ)²</li>
+            <code>Variance = (1 / N) Σ (x_i - μ)²</code></li>
         <li>Calculate the standard deviation by taking the square root of the variance:<br>
-            σ = sqrt(Variance)</li>
+            <code>σ = sqrt(Variance)</code></li>
     </ol>
-    <p><strong>Example:</strong></p>
-    <p>PnL values: 200, 100<br>
-       <strong>Step 1:</strong> Calculate the mean:<br>
-       μ = (200 + 100) / 2 = 150<br>
-       <strong>Step 2:</strong> Calculate squared deviations and variance:<br>
-       (200 - 150)² = 2500<br>
-       (100 - 150)² = 2500<br>
-       Variance = (2500 + 2500) / 2 = 2500<br>
-       <strong>Step 3:</strong> Calculate the standard deviation:<br>
-       σ = sqrt(2500) = 50</p>
-
+    <div class="example">
+        <strong>Example:</strong>
+        <p>PnL values: 200, 100<br>
+           <strong>Step 1:</strong> Calculate the mean:<br>
+           <code>μ = (200 + 100) / 2 = 150</code><br>
+           <strong>Step 2:</strong> Calculate squared deviations and variance:<br>
+           <code>(200 - 150)² = 2500</code><br>
+           <code>(100 - 150)² = 2500</code><br>
+           Variance = (2500 + 2500) / 2 = 2500<br>
+           <strong>Step 3:</strong> Calculate the standard deviation:<br>
+           <code>σ = sqrt(2500) = 50</code></p>
+    </div>
 </body>
 </html>
