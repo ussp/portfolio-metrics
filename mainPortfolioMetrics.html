@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Portfolio Metrics Calculation</title>
+</head>
+<body>
+    <h1>Portfolio Metrics Calculation</h1>
+    
+    <h2>Introduction</h2>
+    <p>This page provides a step-by-step guide to manually calculate the key metrics for a portfolio of assets, including PnL, Total PnL, CAGR, and Standard Deviation (Risk).</p>
+    
+    <h2>PnL Calculation</h2>
+    <p>To calculate the Profit and Loss (PnL) for each asset:</p>
+    <pre><code>
+PnL = (Ending Price - Starting Price) × Number of Shares
+    </code></pre>
+    <p><strong>Example:</strong></p>
+    <p>Starting Price = 100<br>
+       Ending Price = 120<br>
+       Number of Shares = 10<br>
+       <strong>Calculation:</strong><br>
+       PnL = (120 - 100) × 10 = 200</p>
+
+    <h2>Total PnL Calculation</h2>
+    <p>To calculate the Total PnL for the portfolio:</p>
+    <pre><code>
+Total PnL = Σ (PnL for each asset)
+    </code></pre>
+    <p><strong>Example:</strong></p>
+    <p>PnL for Asset 1 = 200<br>
+       PnL for Asset 2 = 100<br>
+       <strong>Calculation:</strong><br>
+       Total PnL = 200 + 100 = 300</p>
+
+    <h2>CAGR Calculation</h2>
+    <p>To calculate the Compound Annual Growth Rate (CAGR):</p>
+    <pre><code>
+CAGR = ((Ending Value / Starting Value) ^ (1 / Number of Years)) - 1
+    </code></pre>
+    <p><strong>Example:</strong></p>
+    <p>Starting Value = 1000<br>
+       Ending Value = 2000<br>
+       Number of Years = 5<br>
+       <strong>Calculation:</strong><br>
+       CAGR = ((2000 / 1000) ^ (1 / 5)) - 1 ≈ 0.1487 or 14.87%</p>
+
+    <h2>Standard Deviation (Risk) Calculation</h2>
+    <p>To calculate the Standard Deviation (Risk) for the portfolio:</p>
+    <pre><code>
+σ = sqrt((1 / N) Σ (x_i - μ)²)
+    </code></pre>
+    <p>Where:</p>
+    <ul>
+        <li>N is the number of observations</li>
+        <li>x_i is each individual PnL value</li>
+        <li>μ is the mean of the PnL values</li>
+    </ul>
+    <p><strong>Steps:</strong></p>
+    <ol>
+        <li>Calculate the mean (μ) of the PnL values:<br>
+            μ = (Σ x_i) / N</li>
+        <li>Calculate each squared deviation from the mean and then the variance:<br>
+            Variance = (1 / N) Σ (x_i - μ)²</li>
+        <li>Calculate the standard deviation by taking the square root of the variance:<br>
+            σ = sqrt(Variance)</li>
+    </ol>
+    <p><strong>Example:</strong></p>
+    <p>PnL values: 200, 100<br>
+       <strong>Step 1:</strong> Calculate the mean:<br>
+       μ = (200 + 100) / 2 = 150<br>
+       <strong>Step 2:</strong> Calculate squared deviations and variance:<br>
+       (200 - 150)² = 2500<br>
+       (100 - 150)² = 2500<br>
+       Variance = (2500 + 2500) / 2 = 2500<br>
+       <strong>Step 3:</strong> Calculate the standard deviation:<br>
+       σ = sqrt(2500) = 50</p>
+
+</body>
+</html>
